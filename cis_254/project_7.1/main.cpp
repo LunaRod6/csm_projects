@@ -46,7 +46,7 @@ int main () {
 
     }
 
-    cout << "The first " << DESIRED_NUMBER << "was in position " << firstPosition << endl;
-    cout << "The last " << DESIRED_NUMBER << "was in position " << lastPosition << endl;
+    cout << "The first " << DESIRED_NUMBER << " was in position " << firstPosition << endl;
+    cout << "The last " << DESIRED_NUMBER << " was in position " << lastPosition << endl;
     return 0;
 }
