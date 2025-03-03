@@ -26,7 +26,7 @@ int main () {
     cout << "How many numbers will be entered? ";
     cin >> value;
 
-    for (int i = 1; i < value; i++) {
+    for (int i = 1; i <= value; i++) {
 
         cout << "Enter num: ";
         cin >> temp;
@@ -34,6 +34,7 @@ int main () {
         if (temp == DESIRED_NUMBER && aux == false) {
 
             firstPosition = i;
+            lastPosition = i;
             aux = true;
             continue;
 
@@ -46,7 +47,16 @@ int main () {
 
     }
 
+    if (aux != true) {
+
+        cout << "Sorry, no " << DESIRED_NUMBER << "'s were entered." << endl;
+
+    } else {
+
     cout << "The first " << DESIRED_NUMBER << " was in position " << firstPosition << endl;
     cout << "The last " << DESIRED_NUMBER << " was in position " << lastPosition << endl;
+
+    }
+
     return 0;
 }
