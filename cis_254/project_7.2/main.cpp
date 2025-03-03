@@ -18,15 +18,16 @@ using namespace std;
 int main () {
 
     int value;
-    int sum = 0;
 
     cout << "Enter an integer larger than 0 (0 or less to quit): ";
     cin >> value;
 
     while (value > 0) {
 
+        int sum = 0;
+
         for (int i = 1; i <= value; i++) {
-            sum += pow(i,i);
+            sum += pow(i,2);
         }
 
         if (sum > 0) {
