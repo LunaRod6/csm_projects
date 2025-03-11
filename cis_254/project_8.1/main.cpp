@@ -1,3 +1,16 @@
+/*
+ * Student: Rodrigo Nochez
+ * Class: CIS 254
+ * Date: 03-10-2025
+ * Instructor: Dave Harden
+ * main.cpp 
+ * github: @LunaRod6 (Process of my code thru commits)
+ * 
+ * This program draws a Rocket based on the input of the user.
+ * 
+ * The program ask the user for measurements, and based on that information it draws a Rocket using loops. if statements and functions.
+ * 
+*/
 #include <iostream>
 using namespace std;
 
@@ -24,9 +37,9 @@ int main() {
 void getDimensions(int& a, int& b, int& c) {
     cout << "enter width: ";
     cin >> a;
-    cout << "enter height of each stage:";
+    cout << "enter height of each stage: ";
     cin >> b;
-    cout << "how many stages in the rocket ";
+    cout << "enter number of stages: ";
     cin >> c;
 }
 
@@ -75,7 +88,7 @@ void drawCone(int width) {
 
     for (int j = 0; j < numRow; j++){
 
-        for (int i = 0; i <= width; i++){
+        for (int i = 0; i < width; i++){
 
             if (i == temp){
     
