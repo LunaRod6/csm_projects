@@ -6,21 +6,28 @@ void drawOneRow(int numSpaces);
 void draw2VerticalLines(int numSpaces, int numRows);
 void drawCone(int width);
 void drawBox(int width, int height);
+void getDimensions(int& a, int& b, int& c);
+void drawRocket(int a, int b, int c);
 
 int main() {
     int a;
-    cin >> a;
+    int b;
+    int c;
 
-    
-    drawCone(a);
-    
-    /*
-    drawBox();
-    drawBox();
-    drawCone();*/
+    getDimensions(a, b, c);
+    drawRocket(a, b, c);
 
 
     return 0;
+}
+
+void getDimensions(int& a, int& b, int& c) {
+    cout << "enter width: ";
+    cin >> a;
+    cout << "enter height of each stage:";
+    cin >> b;
+    cout << "how many stages in the rocket ";
+    cin >> c;
 }
 
 void drawHorizontalLine(int numXs) {
@@ -106,4 +113,15 @@ void drawBox(int width, int height) {
     drawHorizontalLine(width);
     draw2VerticalLines(width-2, height-2);    
     drawHorizontalLine(width);
+}
+
+void drawRocket(int a, int b, int c) {
+
+    drawCone(a);
+
+    for(int i = 0; i < c; i++){
+        drawBox(a, b);
+    }
+
+    drawCone(a);
 }
