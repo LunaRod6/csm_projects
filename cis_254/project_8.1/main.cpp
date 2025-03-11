@@ -4,15 +4,20 @@ using namespace std;
 void drawHorizontalLine(int numXs);
 void drawOneRow(int numSpaces);
 void draw2VerticalLines(int numSpaces, int numRows);
-void drawCone();
+void drawCone(int width);
 void drawBox(int width, int height);
 
 int main() {
+    int a;
+    cin >> a;
 
-    drawCone();
+    
+    drawCone(a);
+    
+    /*
     drawBox();
     drawBox();
-    drawCone();
+    drawCone();*/
 
 
     return 0;
@@ -43,30 +48,55 @@ void drawCone(int width) {
 
     int temp;
     int temp2;
+    int numRow;
     
     //Confirms if the width is even or odd to evaluate how many "X" the program needs to write.
+
     if (width % 2 == 0){
         
         temp = (width / 2) - 1;
         temp2 = (width / 2);
+        numRow = (width / 2);
 
     } else {
 
-        temp = ((width - 1) / 2);
+        temp = (width - 1) / 2;
+        temp2 = temp;
+        numRow = ((width - 1) / 2) + 1;
 
     }
 
-    for (int i = 0; i <= width; i++){
+    for (int j = 0; j < numRow; j++){
 
-        if (i == temp){
+        for (int i = 0; i <= width; i++){
 
-            cout << "X";
+            if (i == temp){
+    
+                cout << "X";
+    
+            } else if (i == temp2){
+    
+                cout << "X";
+    
+            } else {
+    
+                cout << " ";
+            }
+    
+        }
+        //Decreases the index in where the "X" is going to be drawn
+        if (width % 2 == 0){
+
+            temp--;
+            temp2++;
 
         } else {
+            temp--;
+            temp2++;
 
-            cout << " ";
         }
 
+        cout << endl;
     }
 
 
