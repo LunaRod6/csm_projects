@@ -17,30 +17,43 @@
 
 using namespace std;
 
-void doOneSet();
+void generateOperands(int& a , int& b);
+void calculateCorrectAnswer(int a , int b , int& c , char operand );
+void checkAnswer(int total , int user);
+void doOneProblem(char operand ,int a , int b , int& d);
+void doOneSet(char operand);
+
 
 int main(){
 
     srand(static_cast<unsigned>(time(nullptr)));
-    doOneSet();
-
-
+    doOneSet('+');
+    doOneSet('-');
+    doOneSet('*');
 
     return 0;
 }
 
-void doOneSet(){
-    
-    for (int i = 0 ; i < 5 ; i++){
-    int a = rand() % 100;
-    int b = rand() % 100;
-    int c ;
+void generateOperands(int& a , int& b){
 
-    cout << a << " + " << b << " = ";
+     a = rand() % 100;
+     b = rand() % 100;
 
-    cin >> c;
+}
 
-    if (c == a + b) {
+void calculateCorrectAnswer(int a , int b , int& c , char operand){
+    if (operand == '+'){
+        c = a + b;
+    } else if (operand == '-'){
+        c = a - b;
+    } else if (operand == '*'){
+        c = a * b;
+    }
+}
+
+void checkAnswer(int total , int user){
+
+    if (total == user) {
 
         cout << "correct" << endl;
 
@@ -50,7 +63,32 @@ void doOneSet(){
 
     }
 
+}
+
+void doOneProblem(char operand, int a , int b , int& d){
+    
+
+    cout << a << " " << operand << " " << b << " = ";
+
+    cin >> d;
+
+    
+}
+
+void doOneSet(char operand){
+    
+    for(int i = 0 ; i < 5 ; i++){
+        int a = 0;
+        int b = 0;
+        int c;
+        int d;
+
+        generateOperands(a , b);
+        doOneProblem(operand , a , b , d);
+        calculateCorrectAnswer(a , b , c , operand);
+        checkAnswer(c , d);
 
     }
+    
 }
 
