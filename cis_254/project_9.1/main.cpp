@@ -34,8 +34,22 @@ void doOneSet(){
     for (int i = 0 ; i < 5 ; i++){
     int a = rand() % 100;
     int b = rand() % 100;
+    int c ;
 
-    cout << a << " + " << b << " = " << a + b << endl;
+    cout << a << " + " << b << " = ";
+
+    cin >> c;
+
+    if (c == a + b) {
+
+        cout << "correct" << endl;
+
+    } else {
+
+        cout << "incorrect" << endl;
+
+    }
+
 
     }
 }
