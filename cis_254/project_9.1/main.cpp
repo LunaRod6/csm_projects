@@ -18,10 +18,10 @@
 using namespace std;
 
 void generateOperands(int& a , int& b);
-void calculateCorrectAnswer(int a , int b , int& c , char operand );
+void calculateCorrectAnswer(int a , int b , int& c , char symbol );
 void checkAnswer(int total , int user);
-void doOneProblem(char operand ,int a , int b , int& d);
-void doOneSet(char operand);
+void doOneProblem(char symbol ,int a , int b , int& d);
+void doOneSet(char symbol);
 
 
 int main(){
@@ -41,12 +41,12 @@ void generateOperands(int& a , int& b){
 
 }
 
-void calculateCorrectAnswer(int a , int b , int& c , char operand){
-    if (operand == '+'){
+void calculateCorrectAnswer(int a , int b , int& c , char symbol){
+    if (symbol == '+'){
         c = a + b;
-    } else if (operand == '-'){
+    } else if (symbol == '-'){
         c = a - b;
-    } else if (operand == '*'){
+    } else if (symbol == '*'){
         c = a * b;
     }
 }
@@ -65,17 +65,17 @@ void checkAnswer(int total , int user){
 
 }
 
-void doOneProblem(char operand, int a , int b , int& d){
+void doOneProblem(char symbol, int a , int b , int& d){
     
 
-    cout << a << " " << operand << " " << b << " = ";
+    cout << a << " " << symbol << " " << b << " = ";
 
     cin >> d;
 
     
 }
 
-void doOneSet(char operand){
+void doOneSet(char symbol){
     
     for(int i = 0 ; i < 5 ; i++){
         int a = 0;
@@ -84,8 +84,8 @@ void doOneSet(char operand){
         int d;
 
         generateOperands(a , b);
-        doOneProblem(operand , a , b , d);
-        calculateCorrectAnswer(a , b , c , operand);
+        doOneProblem(symbol , a , b , d);
+        calculateCorrectAnswer(a , b , c , symbol);
         checkAnswer(c , d);
 
     }
