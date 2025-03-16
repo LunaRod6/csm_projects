@@ -36,21 +36,31 @@ int main(){
 
 void generateOperands(int& a , int& b){
 
-     a = rand() % 100;
-     b = rand() % 100;
+    //Generates a number between 0 - 100 inclusive
+     a = rand() % 101;
+     b = rand() % 101;
 
 }
 
+//Uses symbol to identify which operation to use and references the answer.
 void calculateCorrectAnswer(int a , int b , int& c , char symbol){
+
     if (symbol == '+'){
+
         c = a + b;
+
     } else if (symbol == '-'){
+
         c = a - b;
+
     } else if (symbol == '*'){
+
         c = a * b;
+
     }
 }
 
+//Evaluates the user's answer with the computer's.
 void checkAnswer(int total , int user){
 
     if (total == user) {
@@ -65,6 +75,7 @@ void checkAnswer(int total , int user){
 
 }
 
+//Prints the prompt and request the input which is going to be used in the checkAnswer() function.
 void doOneProblem(char symbol, int a , int b , int& d){
     
 
@@ -77,6 +88,7 @@ void doOneProblem(char symbol, int a , int b , int& d){
 
 void doOneSet(char symbol){
     
+    //Create 5 exercises for the user 
     for(int i = 0 ; i < 5 ; i++){
         int a = 0;
         int b = 0;
