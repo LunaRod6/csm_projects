@@ -8,7 +8,7 @@
  * 
  * This program ask the user to answer a series of arithmetic problems and reports how the user performs.
  * 
- * The program is divided in 6 phases this code includes phase 1 thru 3, which includes the output of 5 different operations, the input of the user for the answer of these operations and lastly the program will provide 3 different sets of different arithmetic operation, just by changing the parameter of the function.
+ * The program is divided in 6 phases this project is divided in different functions, from printing messages that helps the user to get inputs and also displaying the results and giving report of how well the user performed.
  * 
 */
 #include<iostream>
@@ -24,28 +24,30 @@ void checkAnswer(int total , int user, int& g);
 void doOneProblem(char symbol ,int a , int b , int& d);
 void printHeader(char c);
 void getMaxNum(int& m);
-void doOneSet(char symbol, double n, double& g);
-void printReport(double g1, double g2, double g3, double mN);
+void doOneSet(char symbol, int n, int& g);
+void printReport(int g1, int g2, int g3, int n);
 
 
 int main(){
 
-    double n;
-    double good1;
-    double good2;
-    double good3;
+    int n;
+    int good1 = 0;
+    int good2 = 0;
+    int good3 = 0;
+    
     
     getProbsPerSet(n);
     //srand(static_cast<unsigned>(time(nullptr)));
     doOneSet('+', n, good1);
     doOneSet('-', n, good2);
     doOneSet('*', n, good3);
+    printReport(good1, good2, good3, n);
 
     return 0;
 }
 
 //Ask the user how many sets they want to operate.
-void getProbsPerSet(double& a){
+void getProbsPerSet(int& a){
 
     cout << "Enter problems per set: ";
     cin >> a;
@@ -136,14 +138,13 @@ void getMaxNum(int& m){
 }
 
 //Does the the amount of set that the user choose to use
-void doOneSet(char symbol, double n, double& g){
+void doOneSet(char symbol, int n, int& g){
 
     int maxNum;
 
     cout << endl;
 
     printHeader(symbol);
-
     getMaxNum(maxNum);
     
     //Create exercises using the variable set from the user 
@@ -163,12 +164,18 @@ void doOneSet(char symbol, double n, double& g){
 }
 
 //Print Report of the results of the user
-void printReport(double g1, double g2, double g3, double mN){
+void printReport(int g1, int g2, int g3, int n){
 
-    cout << "Set#1: You got " << g1 << " correct out of "<< mN << " for " <<  fixed << setprecision(1) << (g1 * 100) / mN << "%" << endl;
-    cout << "Set#2: You got " << g2 << " correct out of "<< mN << " for " <<  fixed << setprecision(1) << (g2 * 100) / mN << "%" << endl;
-    cout << "Set#1: You got " << g1 << " correct out of "<< mN << " for " <<  fixed << setprecision(1) << (g3 * 100) / mN << "%" << endl;
-    cout << "Overall you got "<< g1 + g2 + g3 << " correct out of " << mN * 3 << " for " << fixed << setprecision(1) << (mN * 3 * 100) / mN << "%" << endl;
+    int total = n * 3;
+    double sTotal = n * 3;
+    double percentage = n;
+    int gTotal = g1 + g2 + g3;
+
+    cout << endl;
+    cout << "Set#1:  You got " << g1 << " correct out of "<< n << " for " <<  fixed << setprecision(1) << (g1 * 100) / percentage << "%" << endl;
+    cout << "Set#2:  You got " << g2 << " correct out of "<< n << " for " <<  fixed << setprecision(1) << (g2 * 100) / percentage << "%" << endl;
+    cout << "Set#3:  You got " << g3 << " correct out of "<< n << " for " <<  fixed << setprecision(1) << (g3 * 100) / percentage << "%" << endl;
+    cout << "Overall you got "<< gTotal << " correct out of " << total << " for " << fixed << setprecision(1) << gTotal * 100 / sTotal << "%" << endl;
 
 }
 
