@@ -26,7 +26,7 @@ void doOneSet(char symbol);
 
 int main(){
 
-    srand(static_cast<unsigned>(time(nullptr)));
+    //srand(static_cast<unsigned>(time(nullptr)));
     doOneSet('+');
     doOneSet('-');
     doOneSet('*');
