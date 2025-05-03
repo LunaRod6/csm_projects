@@ -5,13 +5,16 @@ using namespace std;
 class Fraction {
     public:
     void set(int num, int den) { numerator = num; denominator = den;}
-    
+    void print();
     private:
     int numerator;
     int denominator;
-}
+};
 
 // Implementation of class member functions goes here.
+void Fraction::print() {
+    cout << numerator << "/" << denominator << endl;
+}
 
 int main()
 {
@@ -27,7 +30,7 @@ int main()
     cout << " and ";
     f2.print();
     cout << " is ";
-    result = f1.multipliedBy(f2);
+    //result = f1.multipliedBy(f2);
     result.print();
     cout << endl;
 
@@ -36,7 +39,7 @@ int main()
     cout << " and ";
     f2.print();
     cout << " is ";
-    result = f1.dividedBy(f2);
+    //result = f1.dividedBy(f2);
     result.print();
     cout << endl;
 
@@ -45,7 +48,7 @@ int main()
     cout << " and ";
     f2.print();
     cout << " is ";
-    result = f1.addedTo(f2);
+    //result = f1.addedTo(f2);
     result.print();
     cout << endl;
 
@@ -54,13 +57,13 @@ int main()
     cout << " and ";
     f2.print();
     cout << " is ";
-    result = f1.subtract(f2);
+    //result = f1.subtract(f2);
     result.print();
     cout << endl;
 
-    if (f1.isEqualTo(f2)){
+  /*  if (f1.isEqualTo(f2)){
         cout << "The two Fractions are equal." << endl;
     } else {
         cout << "The two Fractions are not equal." << endl;
-    }
+    }*/
 }
