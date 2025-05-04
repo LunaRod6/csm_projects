@@ -20,6 +20,14 @@ const int DAYS_IN_WEEK = 7;
 const int MONTHS_IN_YEAR = 12;
 
 bool isLeap(int year);
+<<<<<<< HEAD
+=======
+void thirtyDays(int i);
+int isFebruary(int i, bool leapBool);
+int thirtyOneDays(int i);
+void beginningOfDay(int day, int& startingDay, int& isSaturday);
+int printCalendar(int startingDay, int days, int isSaturday);
+>>>>>>> alt-history
 void printMonth(int year, int day);
 void printMonth(int year, int month, int day);
 
@@ -39,6 +47,16 @@ int main() {
 
 bool isLeap (int year) {
 
+<<<<<<< HEAD
+=======
+
+
+
+
+//evaluates if a year is leap
+bool isLeap(int year) {
+
+>>>>>>> alt-history
     bool leapBool;
 
     if ((year % 4 == 0 && year % 100 == 0) && year % 400 == 0) {
@@ -56,23 +74,85 @@ bool isLeap (int year) {
     }
 
     return leapBool;
+<<<<<<< HEAD
 
 
+=======
+}
+
+
+
+
+//return if a month has 30 days
+void thirtyDays(int i) {
+    
+    if (i == 3) {
+
+        cout << setw(13) << "April" << setw(13) << endl << endl;
+
+    } else if (i == 5) {
+
+        cout << setw(13) << "June" << setw(13) << endl << endl;
+        
+
+    } else if (i == 8) {
+
+        cout << setw(13) << "September" << setw(13) << endl << endl;
+
+    } else if (i == 10) {
+
+        cout << setw(13) << "November" << setw(13) << endl << endl;
+
+    }
+
+>>>>>>> alt-history
 }
 
 
 
 
 
+<<<<<<< HEAD
 int dayOfMonth (int i, bool leapBool) {
 
     int days;
 
+=======
+//returns the days for february
+int isFebruary(int i, bool leapBool) {
+    
+    int days;
+
+    cout << setw(13) << "February" << setw(13) << endl << endl;
+            if (leapBool == true) {
+
+                days = 29;
+
+            } else {
+
+                days = 28;
+
+            }
+
+            return days;
+}
+
+
+
+
+
+//returns how many days a month has
+int thirtyOneDays(int i) {
+
+    int days = 30;
+
+>>>>>>> alt-history
     if (i == 0) {
 
         cout << setw(13) << "January" << setw(13) << endl << endl;
         days = 31;
 
+<<<<<<< HEAD
     } else if (i == 1) {
 
         cout << setw(13) << "February" << setw(13) << endl << endl;
@@ -94,17 +174,26 @@ int dayOfMonth (int i, bool leapBool) {
     } else if (i == 3) {
 
         cout << setw(13) << "April" << setw(13) << endl << endl;
+=======
+    } else if (i == 2) {
+
+            cout << setw(13) << "March" << setw(13) << endl << endl;
+            days = 31;
+>>>>>>> alt-history
 
     } else if (i == 4) {
 
         cout << setw(13) << "May" << setw(13) << endl << endl;
         days = 31;
 
+<<<<<<< HEAD
     } else if (i == 5) {
 
         cout << setw(13) << "June" << setw(13) << endl << endl;
         
 
+=======
+>>>>>>> alt-history
     } else if (i == 6) {
 
         cout << setw(13) << "July" << setw(13) << endl << endl;
@@ -115,48 +204,81 @@ int dayOfMonth (int i, bool leapBool) {
         cout << setw(13) << "August" << setw(13) << endl << endl;
         days = 31;
 
+<<<<<<< HEAD
     } else if (i == 8) {
 
         cout << setw(13) << "September" << setw(13) << endl << endl;
 
+=======
+>>>>>>> alt-history
     } else if (i == 9) {
 
         cout << setw(13) << "October" << setw(13) << endl << endl;
         days = 31;
 
+<<<<<<< HEAD
     } else if (i == 10) {
 
         cout << setw(13) << "November" << setw(13) << endl << endl;
 
+=======
+>>>>>>> alt-history
     } else if (i == 11) {
 
         cout << setw(13) << "December" << setw(13) << endl << endl;
         days = 31;
 
+<<<<<<< HEAD
     }
 
     return days;
+=======
+    } else {
+
+        thirtyDays(i);
+
+    }
+
+
+    return days;
+
+>>>>>>> alt-history
 }
 
 
 
 
 
+<<<<<<< HEAD
 int startDay (int day) {
 
     int startingDay;
+=======
+
+//Indicates the first day of the month and evaluates the weeks in the month
+void beginningOfDay(int day, int& startingDay, int& isSaturday) {
+>>>>>>> alt-history
 
     if (day == 0) {
 
         startingDay = 2;
+<<<<<<< HEAD
+=======
+        isSaturday = 7;
+>>>>>>> alt-history
 
     } else if (day == 1) {
 
         startingDay = 5;
+<<<<<<< HEAD
+=======
+        isSaturday = 6;
+>>>>>>> alt-history
 
     } else if (day == 2) {
 
         startingDay = 8;
+<<<<<<< HEAD
 
     } else if (day == 3) {
 
@@ -194,38 +316,135 @@ int firstSaturday (int day) {
         isSaturday = 6;
 
     } else if (day == 2) {
+=======
+>>>>>>> alt-history
         isSaturday = 5;
 
     } else if (day == 3) {
 
+<<<<<<< HEAD
+=======
+        startingDay = 11;
+>>>>>>> alt-history
         isSaturday = 4;
 
     } else if (day == 4) {
 
+<<<<<<< HEAD
+=======
+        startingDay = 14;
+>>>>>>> alt-history
         isSaturday = 3;
 
     } else if (day == 5) {
 
+<<<<<<< HEAD
+=======
+        startingDay = 17;
+>>>>>>> alt-history
         isSaturday = 2;
 
     } else if (day == 6) {
 
+<<<<<<< HEAD
+=======
+        startingDay = 20;
+>>>>>>> alt-history
         isSaturday = 1;
 
     }
 
+<<<<<<< HEAD
     return isSaturday;
 }
 
 //Prints a full calendar
+=======
+}
+
+
+
+
+
+//Prints the numbers in the calendar
+int printCalendar(int startingDay, int days, int isSaturday) {
+
+    int count = 0;
+    int weekCount = 0;
+
+    for (int j = 0; j < startingDay + days; j++) {
+            
+        if (j == startingDay) {
+
+            count++;
+            cout << count;
+
+        } else if (count == 0){
+
+            cout << " ";
+
+        } else if (count > 8) {
+
+            count++;
+            cout << " " << count;
+
+        } else {
+
+            count++;
+            cout << "  " << count;
+
+        }
+        
+        if (count == isSaturday){
+
+            weekCount = 7;
+
+        }
+
+        if (weekCount == 7){
+            
+            cout << endl;
+            weekCount = 1;
+
+        } else if(weekCount > 0) {
+
+            weekCount++;
+
+        }
+    }
+        if (weekCount == 1){
+
+            cout << endl;
+
+        } else {
+
+            cout << endl << endl;
+
+        }
+
+
+        return weekCount;
+
+    }
+
+
+
+
+
+//Displays a full calendar
+>>>>>>> alt-history
 void printMonth(int year, int day) {
     
     //leapBool evaluates if it is a leap year, startingDay stores on which day the calendar should start every month, weeekCount helps to know when to end a line.
     bool leapBool = false;
     int startingDay;
+<<<<<<< HEAD
     int weekCount = 0;
 
     
+=======
+
+>>>>>>> alt-history
     leapBool = isLeap(year);
 
     cout << setw(11) << year << setw(11) << endl << endl;
@@ -235,15 +454,27 @@ void printMonth(int year, int day) {
 
         //days helps to know how many days a month has, count helps on displaying the date number, isSaturday tells the program when the date is going to be Saturday so it can do the first end line.
         int days = 30;
-        int count = 0;
         int isSaturday = 0;
         
 
+<<<<<<< HEAD
        days = dayOfMonth(i,leapBool);
+=======
+        if (i == 1) {
+
+            days = isFebruary(i, leapBool);
+
+        } else {
+
+            days = thirtyOneDays(i);
+            
+        }
+>>>>>>> alt-history
 
         //User choice and index S(0 = 2) M(1 = 5) T(2 = 8) W(3 = 11) T(4 = 14) F(5 = 17) S(6 = 20)
         cout << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 
+<<<<<<< HEAD
         startingDay = startDay(day);
         isSaturday = firstSaturday(day);
 
@@ -302,184 +533,44 @@ void printMonth(int year, int day) {
 
         day = weekCount - 1;
         weekCount = 0;
+=======
+        beginningOfDay(day, startingDay, isSaturday);
+>>>>>>> alt-history
 
+        day = printCalendar(startingDay, days, isSaturday) - 1;
+        //weekCount = 0;
+        
     }
 }
 
 
 
 
-//Similar function as the previous one, but this one limits the scope to only an specific month set by the user.
+
+//Displays only a month
 void printMonth(int year, int month, int day) {
 
     month--;
     bool leapBool = false;
     int startingDay;
-    int weekCount = 0;
 
+<<<<<<< HEAD
     isLeap(year);
+=======
+    leapBool = isLeap(year);
+>>>>>>> alt-history
 
         int days = 30;
-        int count = 0;
         int isSaturday = 0;
         
 
-        if (month == 0) {
+        if (month == 1) {
 
-            cout << setw(13) << "January" << setw(13) << endl << endl;
-            days = 31;
-
-        } else if (month == 1) {
-
-            cout << setw(13) << "February" << setw(13) << endl << endl;
-            if (leapBool == true) {
-
-                days = 29;
-
-            } else {
-
-                days = 28;
-
-            }
-
-        } else if (month == 2) {
-
-            cout << setw(13) << "March" << setw(13) << endl << endl;
-            days = 31;
-
-        } else if (month == 3) {
-
-            cout << setw(13) << "April" << setw(13) << endl << endl;
-
-        } else if (month == 4) {
-
-            cout << setw(13) << "May" << setw(13) << endl << endl;
-            days = 31;
-
-        } else if (month == 5) {
-
-            cout << setw(13) << "June" << setw(13) << endl << endl;
-            
-
-        } else if (month == 6) {
-
-            cout << setw(13) << "July" << setw(13) << endl << endl;
-            days = 31;
-
-        } else if (month == 7) {
-
-            cout << setw(13) << "August" << setw(13) << endl << endl;
-            days = 31;
-
-        } else if (month == 8) {
-
-            cout << setw(13) << "September" << setw(13) << endl << endl;
-
-        } else if (month == 9) {
-
-            cout << setw(13) << "October" << setw(13) << endl << endl;
-            days = 31;
-
-        } else if (month == 10) {
-
-            cout << setw(13) << "November" << setw(13) << endl << endl;
-
-        } else if (month == 11) {
-
-            cout << setw(13) << "December" << setw(13) << endl << endl;
-            days = 31;
-
-        }
-
-        //User choice and index S(0 = 2) M(1 = 5) T(2 = 8) W(3 = 11) T(4 = 14) F(5 = 17) S(6 = 20)
-        cout << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
-
-        if (day == 0) {
-
-            startingDay = 2;
-            isSaturday = 7;
-
-        } else if (day == 1) {
-
-            startingDay = 5;
-            isSaturday = 6;
-
-        } else if (day == 2) {
-
-            startingDay = 8;
-            isSaturday = 5;
-
-        } else if (day == 3) {
-
-            startingDay = 11;
-            isSaturday = 4;
-
-        } else if (day == 4) {
-
-            startingDay = 14;
-            isSaturday = 3;
-
-        } else if (day == 5) {
-
-            startingDay = 17;
-            isSaturday = 2;
-
-        } else if (day == 6) {
-
-            startingDay = 20;
-            isSaturday = 1;
-
-        }
-
-        for (int j = 0; j < startingDay + days; j++) {
-            
-            if (j == startingDay) {
-
-                count++;
-                cout << count;
-
-            } else if (count == 0){
-
-                cout << " ";
-
-            } else if (count > 8) {
-
-                count++;
-                cout << " " << count;
-
-            } else {
-
-                count++;
-                cout << "  " << count;
-
-            }
-            
-            if (count == isSaturday){
-
-                weekCount = 7;
-
-            }
-
-            if (weekCount == 7){
-                
-                cout << endl;
-                weekCount = 1;
-
-            } else if(weekCount > 0) {
-
-                weekCount++;
-
-            }
-
-
-        }
-
-        if (weekCount == 1){
-
-            cout << endl;
+            days = isFebruary(month, leapBool);
 
         } else {
 
+<<<<<<< HEAD
             cout << endl << endl;
 
         }
@@ -495,5 +586,17 @@ void printMonth(int year, int month, int day) {
 
 
 void days31 () {
+=======
+            days = thirtyOneDays(month);
+            
+        }
+
+        //User choice and index S(0 = 2) M(1 = 5) T(2 = 8) W(3 = 11) T(4 = 14) F(5 = 17) S(6 = 20)
+        cout << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
+
+        beginningOfDay(day, startingDay, isSaturday);
+
+        day = printCalendar(startingDay, days, isSaturday) - 1;
+>>>>>>> alt-history
 
 }
