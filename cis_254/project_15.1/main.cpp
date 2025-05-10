@@ -1,123 +1,29 @@
+/* Student: Rodrigo Nochez
+ * Class: CIS 254
+ * Date: 05-09-2025
+ * Instructor: Dave Harden
+ * main.cpp 
+ * fraction.h
+ * fraction.cpp
+ * github: @LunaRod6 (Process of my code thru commits)
+ * 
+ * This program ask the user for fractions, it simplifies it and then runs arithmetic operations.
+ * 
+ * The program treats fractions as objects, including a default constructor and a constructor with parameters, the functions uses arithmetic operations with the fractions that the user input from console. 
+*/
 #include <iostream>
-#include <cassert>
+#include "Fraction.h"
 using namespace std;
-
-// Class declaration goes here.
-class Fraction {
-
-    public:
-
-      void setNumAndDen(int num, int den);
-      Fraction addedTo(Fraction second);
-      Fraction subtract(Fraction second);
-      Fraction multipliedBy(Fraction second);
-      Fraction dividedBy(Fraction second);
-      bool isEqualTo(Fraction second) const;
-      void print() const;
-
-    private:
-
-      int numerator;
-      int denominator;
-      void simplify();
-
-};
-Fraction::Fraction() {
-
-    numerator = 0;
-    denominator = 1;
-
-}
-
-void Fraction::setNumAndDen(int num, int den) {
-    Fraction temp;
-
-    assert(den != 0);
-    numerator = num; 
-    denominator = den;
-    temp.simplify();
-
-}
-
-// Implementation of class member functions goes here.
-Fraction Fraction::addedTo(Fraction second) {
-    Fraction temp;
-    temp.numerator = numerator * second.denominator + denominator * second.numerator;
-    temp.denominator = denominator * second.denominator;
-
-    return temp;
-}
-
-Fraction Fraction::subtract(Fraction second) {
-    Fraction temp;
-    temp.numerator = numerator * second.denominator - denominator * second.numerator;
-    temp.denominator = denominator * second.denominator;
-
-    return temp;
-}
-
-Fraction Fraction::multipliedBy(Fraction second){
-    Fraction temp;
-    temp.numerator = numerator * second.numerator;
-    temp.denominator = denominator * second.denominator;
-
-    return temp;
-}
-
-Fraction Fraction::dividedBy(Fraction second){
-    Fraction temp;
-    temp.numerator = numerator * second.denominator;
-    temp.denominator = denominator * second.numerator;
-
-    return temp;
-}
-
-bool Fraction::isEqualTo(Fraction second) const {
-
-    if (numerator * second.denominator == denominator * second.numerator) {
-
-        return true;
-
-    } else {
-
-        return false;
-
-    }
-}
-
-void Fraction::print() const {
-    cout << numerator << "/" << denominator;
-}
-
-
-
-
-//Simplifies fractions while both the numerator and denominator are divisible by the same number. 
-void Fraction::simplify(){
-
-    unsigned int i;
-
-    for(i = 2; i < 9; i++) {
-
-        while(numerator % i == 0 && denominator % i == 0) {
-
-            if(numerator % i == 0 && denominator % i == 0) {
-
-                numerator = numerator / i;
-                denominator = denominator / i;
-            }
-        }
-    }
-}
 
 int main()
 {
-    Fraction f1;
-    Fraction f2;
+    Fraction f1(9,8);
+    Fraction f2(2,3);
     Fraction result;
 
-    f1.setNumAndDen(9, 8);
-    f2.setNumAndDen(2, 3);
+    cout << "The result starts off at ";
+    result.print();
+    cout << endl;
 
     cout << "The product of ";
     f1.print();
@@ -160,4 +66,16 @@ int main()
     } else {
         cout << "The two Fractions are not equal." << endl;
     }
+    
+    const Fraction f3(12, 8);
+    const Fraction f4(202, 303);
+    result = f3.multipliedBy(f4);
+    cout << "The product of ";
+    f3.print();
+    cout << " and ";
+    f4.print();
+    cout << " is ";
+    result.print();
+    cout << endl;
+
 }
